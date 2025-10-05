@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rgPlayer;
     private Vector3 moveInput;
 
-    void Awake()
+    void Start()
     {
         rgPlayer = GetComponent<Rigidbody>();
     }
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal"); 
         float moveZ = Input.GetAxisRaw("Vertical");   
 
-        moveInput = new Vector3(moveX, 0f, moveZ);
+        moveInput = new Vector3(moveX, 0.0f, moveZ);
         if (moveInput.magnitude > 1f)
         {
             moveInput.Normalize();
